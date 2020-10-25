@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://actors/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scripts/Game.gd" type="Script" id=3]
+[ext_resource path="res://scripts/Messages.gd" type="Script" id=4]
+[ext_resource path="res://scripts/HealthBar.gd" type="Script" id=5]
+
+[node name="Game" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="LevelContainer" type="Node2D" parent="."]
+
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="Messages" type="Label" parent="HUD"]
+margin_left = 32.0
+margin_top = 32.0
+margin_right = 332.0
+margin_bottom = 232.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Game messages
+Go here
+"
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HealthBar" type="Node2D" parent="HUD"]
+script = ExtResource( 5 )
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 512, 296 )

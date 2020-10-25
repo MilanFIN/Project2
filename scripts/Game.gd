@@ -1,0 +1,65 @@
+extends Node2D
+
+
+var tilemap = null
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+
+	start()
+	VisualServer.set_default_clear_color(Color(1,1,1,1.0))
+
+
+
+func start():
+	changeMap("Level1") #mapname
+	get_node("Player").restart()
+
+func changeMap(mapname):
+	
+	var levelContainer = get_node("LevelContainer")
+	var player = get_node("Player")
+	for n in levelContainer.get_children():
+		n.queue_free()
+	var mapFile = load("res://levels/"+mapname+".tscn")
+	var mapNode = mapFile.instance()
+	mapNode.name = mapname
+	mapNode.position = Vector2(0,0)
+	levelContainer.add_child(mapNode)
+	
+	
+	player.position = Vector2(mapNode.startX, mapNode.startY) * 32 + Vector2(16, 16)
+	tilemap = mapNode.get_node("TileMap")
+	player.tilemap = mapNode.get_node("TileMap")
+
+
+
+
+func _physics_process(delta: float) -> void:
+	var player = get_node("Player")
+
+	var moveDirection = Vector2(0,0)
+	if Input.is_action_pressed("move_left"):
+		moveDirection.x = -1
+	if Input.is_action_pressed("move_right"):
+		moveDirection.x = 1
+	if Input.is_action_pressed("move_up"):
+		moveDirection.y = -1
+	if Input.is_action_pressed("move_down"):
+		moveDirection.y = 1
+	player.moveDirection = moveDirection
+	
+	
+	if Input.is_action_pressed("melee"):
+		player.changeToMelee()
+	if Input.is_action_pressed("pistol"):
+		player.changeToPistol()
+	if Input.is_action_pressed("shotgun"):
+		player.changeToShotgun()
+
+	
+	if (Input.is_mouse_button_pressed(BUTTON_LEFT)):
+		player.primaryAction()
+
+	if (not player.checkAlive()):
+		start()
+	
