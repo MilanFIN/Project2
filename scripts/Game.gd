@@ -50,11 +50,11 @@ func _physics_process(delta: float) -> void:
 	
 	
 	if Input.is_action_pressed("melee"):
-		player.changeToMelee()
+		player.setWeapon(0)
 	if Input.is_action_pressed("pistol"):
-		player.changeToPistol()
+		player.setWeapon(1)
 	if Input.is_action_pressed("shotgun"):
-		player.changeToShotgun()
+		player.setWeapon(2)
 
 	
 	if (Input.is_mouse_button_pressed(BUTTON_LEFT)):

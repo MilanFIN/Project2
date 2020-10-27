@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://scripts/Pistol.gd" type="Script" id=1]
+[ext_resource path="res://graphics/player/pistol.png" type="Texture" id=2]
+
+[sub_resource type="AtlasTexture" id=4]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 16, 8 )
+
+[sub_resource type="AtlasTexture" id=5]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 0, 8, 16, 8 )
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ SubResource( 4 ), SubResource( 5 ), SubResource( 4 ) ],
+"loop": false,
+"name": "New Anim",
+"speed": 5.0
+} ]
+
+[node name="Pistol" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Sprite" type="AnimatedSprite" parent="."]
+position = Vector2( -12, -4 )
+frames = SubResource( 3 )
+animation = "New Anim"
+
+[node name="fireRay" type="RayCast2D" parent="."]
+enabled = true
+cast_to = Vector2( -800, 0 )
+collision_mask = 5

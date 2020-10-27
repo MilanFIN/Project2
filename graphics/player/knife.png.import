@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/player_attack.png-b5acea822a87cb65c5572ca8eab2ebd3.stex"
+path="res://.import/knife.png-5ee06cfe5c87ae940ca42c61d0ee8c8c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://graphics/player/player_attack.png"
-dest_files=[ "res://.import/player_attack.png-b5acea822a87cb65c5572ca8eab2ebd3.stex" ]
+source_file="res://graphics/player/knife.png"
+dest_files=[ "res://.import/knife.png-5ee06cfe5c87ae940ca42c61d0ee8c8c.stex" ]
 
 [params]
 

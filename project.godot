@@ -18,10 +18,16 @@ _global_script_classes=[ {
 "class": "Ai",
 "language": "GDScript",
 "path": "res://scripts/Ai.gd"
+}, {
+"base": "Node2D",
+"class": "Weapon",
+"language": "GDScript",
+"path": "res://scripts/Weapon.gd"
 } ]
 _global_script_class_icons={
 "Actor": "",
-"Ai": ""
+"Ai": "",
+"Weapon": ""
 }
 
 [application]
@@ -136,6 +142,7 @@ shotgun={
 2d_physics/layer_1="world"
 2d_physics/layer_2="player"
 2d_physics/layer_3="enemy"
+2d_physics/layer_4="misc"
 
 [rendering]
 
