@@ -1,9 +1,44 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://actors/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scripts/Game.gd" type="Script" id=3]
 [ext_resource path="res://scripts/Messages.gd" type="Script" id=4]
 [ext_resource path="res://scripts/HealthBar.gd" type="Script" id=5]
+
+[sub_resource type="DynamicFontData" id=4]
+font_path = "res://fonts/Roboto-Black.ttf"
+
+[sub_resource type="DynamicFont" id=5]
+size = 20
+font_data = SubResource( 4 )
+
+[sub_resource type="DynamicFontData" id=10]
+font_path = "res://fonts/Roboto-Black.ttf"
+
+[sub_resource type="DynamicFont" id=11]
+size = 32
+font_data = SubResource( 10 )
+
+[sub_resource type="DynamicFontData" id=12]
+font_path = "res://fonts/Roboto-Black.ttf"
+
+[sub_resource type="DynamicFont" id=13]
+size = 32
+font_data = SubResource( 12 )
+
+[sub_resource type="DynamicFontData" id=6]
+font_path = "res://fonts/Roboto-Black.ttf"
+
+[sub_resource type="DynamicFont" id=7]
+size = 32
+font_data = SubResource( 6 )
+
+[sub_resource type="DynamicFontData" id=8]
+font_path = "res://fonts/Roboto-Black.ttf"
+
+[sub_resource type="DynamicFont" id=9]
+size = 32
+font_data = SubResource( 8 )
 
 [node name="Game" type="Node2D"]
 script = ExtResource( 3 )
@@ -17,6 +52,7 @@ margin_left = 32.0
 margin_top = 32.0
 margin_right = 332.0
 margin_bottom = 232.0
+custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Game messages
 Go here
@@ -26,14 +62,39 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Hp" type="Label" parent="HUD"]
+margin_left = 320.0
+margin_top = 472.0
+margin_right = 373.0
+margin_bottom = 510.0
+custom_fonts/font = SubResource( 11 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "HP:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="HealthBar" type="Node2D" parent="HUD"]
 script = ExtResource( 5 )
 
+[node name="Weap" type="Label" parent="HUD"]
+margin_left = 640.0
+margin_top = 472.0
+margin_right = 756.0
+margin_bottom = 510.0
+custom_fonts/font = SubResource( 13 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Weapon"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="CurrentWeapon" type="Label" parent="HUD"]
-margin_left = 712.0
+margin_left = 704.0
 margin_top = 512.0
-margin_right = 752.0
-margin_bottom = 526.0
+margin_right = 780.0
+margin_bottom = 550.0
+custom_fonts/font = SubResource( 7 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Knife"
 __meta__ = {
@@ -41,10 +102,11 @@ __meta__ = {
 }
 
 [node name="AmmoCount" type="Label" parent="HUD"]
-margin_left = 664.0
+margin_left = 640.0
 margin_top = 512.0
-margin_right = 704.0
-margin_bottom = 526.0
+margin_right = 680.0
+margin_bottom = 550.0
+custom_fonts/font = SubResource( 9 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "-1"
 __meta__ = {

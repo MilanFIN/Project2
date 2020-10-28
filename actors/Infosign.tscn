@@ -1,10 +1,19 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://graphics/entities/infosign.png" type="Texture" id=1]
 [ext_resource path="res://scripts/Infosign.gd" type="Script" id=2]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 16.0
+
+[sub_resource type="DynamicFontData" id=2]
+font_path = "res://fonts/Roboto-Black.ttf"
+
+[sub_resource type="DynamicFont" id=3]
+size = 20
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = SubResource( 2 )
 
 [node name="Infosign" type="KinematicBody2D"]
 collision_layer = 8
@@ -26,6 +35,8 @@ margin_right = 16.0
 margin_bottom = -10.0
 grow_horizontal = 2
 grow_vertical = 2
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 1, 1, 0, 1 )
 text = "TEXT GOES HERE"
 align = 1
 valign = 1
