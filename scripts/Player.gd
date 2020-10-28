@@ -75,15 +75,15 @@ func _physics_process(delta):
 			i.visible = false
 		else:
 			i.visible = true
-	#get_node("melee").visible = weaponVisibility[0]
-	#get_node("pistol").visible = weaponVisibility[1]
-	#get_node("shotgun").visible = weaponVisibility[2]
 	
 	
-	if (get_node("ActRay").is_colliding()):
-		var target = get_node("ActRay").get_collider()
+	if (get_node("SecondaryRay").is_colliding()):
+		var target = get_node("SecondaryRay").get_collider()
 		target.look()
 	
+	var hud = get_tree().get_root().get_node("Game/HUD")
+	hud.get_node("AmmoCount").text = str(weapons[currentWeapon].ammo)
+	hud.get_node("CurrentWeapon").text = str(weapons[currentWeapon].name)
 #replace with configurable value
 func getDamage():
 	return 1.0
@@ -100,13 +100,19 @@ func setWeapon(weap):
 func primaryAction():
 	if (OS.get_ticks_msec() - timeSinceLastAct > actDelay):
 		actDelay = weapons[currentWeapon].getDelay()
-		timeSinceLastAct = OS.get_ticks_msec()	
+		timeSinceLastAct = OS.get_ticks_msec()
 		if (weapons[currentWeapon].hasAmmo()):
 			weapons[currentWeapon].fire()
 		else:
 			outOfAmmo()
 
-
+func secondaryAction():
+	if (OS.get_ticks_msec() - timeSinceLastAct > actDelay):
+		actDelay = 100
+		timeSinceLastAct = OS.get_ticks_msec()
+		if (get_node("SecondaryRay").is_colliding()):
+			var target = get_node("SecondaryRay").get_collider()
+			target.act()
 
 func outOfAmmo():
 	messageBox.showMessage("Out of ammo")

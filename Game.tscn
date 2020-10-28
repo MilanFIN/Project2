@@ -29,5 +29,27 @@ __meta__ = {
 [node name="HealthBar" type="Node2D" parent="HUD"]
 script = ExtResource( 5 )
 
+[node name="CurrentWeapon" type="Label" parent="HUD"]
+margin_left = 712.0
+margin_top = 512.0
+margin_right = 752.0
+margin_bottom = 526.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Knife"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AmmoCount" type="Label" parent="HUD"]
+margin_left = 664.0
+margin_top = 512.0
+margin_right = 704.0
+margin_bottom = 526.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "-1"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 512, 296 )
