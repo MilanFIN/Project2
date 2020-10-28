@@ -11,7 +11,7 @@ func _ready() -> void:
 
 
 func start():
-	changeMap("Level1") #mapname
+	changeMap(Global.level)
 	get_node("Player").restart()
 
 func changeMap(mapname):
