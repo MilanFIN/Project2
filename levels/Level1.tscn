@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://tilesets/Tileset1.tres" type="TileSet" id=1]
 [ext_resource path="res://scripts/Level.gd" type="Script" id=2]
@@ -6,6 +6,8 @@
 [ext_resource path="res://actors/Ladder.tscn" type="PackedScene" id=4]
 [ext_resource path="res://tilesets/OverlayTileset1.tres" type="TileSet" id=5]
 [ext_resource path="res://actors/Infosign.tscn" type="PackedScene" id=6]
+[ext_resource path="res://actors/Shells.tscn" type="PackedScene" id=7]
+[ext_resource path="res://actors/Bullets.tscn" type="PackedScene" id=8]
 
 [node name="Level" type="Node2D"]
 script = ExtResource( 2 )
@@ -28,8 +30,15 @@ cell_custom_transform = Transform2D( 0, 0, 0, 0, 0, 0 )
 format = 1
 tile_data = PoolIntArray( -1, 0, 0, -65536, 0, 0, -65535, 0, 0, -65534, 0, 0, -65533, 0, 0, -65532, 0, 0, -65531, 0, 0, -65530, 0, 0, -65529, 0, 0, -65528, 0, 0, 65535, 0, 0, 8, 0, 0, 131071, 0, 0, 65544, 0, 0, 196607, 0, 0, 131072, 0, 0, 131073, 0, 0, 131074, 0, 0, 131075, 0, 0, 131076, 0, 0, 131077, 0, 0, 131078, 0, 0, 131079, 0, 0, 131080, 0, 0 )
 
+[node name="Shells" parent="." instance=ExtResource( 7 )]
+position = Vector2( 184, -80 )
+
+[node name="Bullets" parent="Shells" instance=ExtResource( 8 )]
+position = Vector2( -56, 0 )
+
 [node name="Blurb" parent="." instance=ExtResource( 3 )]
-position = Vector2( 240, 48 )
+position = Vector2( 136, 24 )
+drop = "Bullets"
 
 [node name="Ladder" parent="." instance=ExtResource( 4 )]
 position = Vector2( 208, 32 )

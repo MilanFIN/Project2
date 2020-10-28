@@ -3,7 +3,7 @@ extends Actor
 
 export var speed = 30
 export var hp = 3
-
+export var drop = ""
 
 
 var velocity = Vector2.ZERO
@@ -65,6 +65,11 @@ func act():
 
 	if (hp <= 0):
 		message = "The " +name+" died"
+		
+		if (drop != ""):
+			var dropFile = load("res://actors/"+drop+".tscn")
+			var dropNode = dropFile.instance()
+			get_parent().add_child(dropNode)
 		queue_free()
 	else:
 		message = "You attacked a " + name

@@ -96,24 +96,22 @@ func setWeapon(weap):
 	currentWeapon = weap
 
 func primaryAction():
-	
-	
 	if (OS.get_ticks_msec() - timeSinceLastAct > actDelay):
-		timeSinceLastAct = OS.get_ticks_msec()
-		weapons[currentWeapon].fire()
-	"""
-		if (weaponVisibility[0]):
-			useMelee()
-		if (weaponVisibility[1]):
-			shootPistol()
-		if (weaponVisibility[2]):
-			shootShotgun()
-	"""
+		actDelay = weapons[currentWeapon].getDelay()
+		timeSinceLastAct = OS.get_ticks_msec()	
+		if (weapons[currentWeapon].hasAmmo()):
+			weapons[currentWeapon].fire()
+		else:
+			outOfAmmo()
+
 
 
 func outOfAmmo():
-	print("out of ammo")
+	messageBox.showMessage("Out of ammo")
 
+
+func addAmmo(weaponIndex, amount):
+	weapons[weaponIndex].addAmmo(amount)
 
 func checkAlive():
 	if (hp <= 0):

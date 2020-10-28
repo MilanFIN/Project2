@@ -8,10 +8,10 @@ extends Weapon
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	ammo = -1
 	pass # Replace with function body.
 
 func fire():
-	reduceAmmo()
 	get_node("Sprite").frame = 0
 	get_node("Sprite").play()
 	if (get_node("fireRay").is_colliding()):

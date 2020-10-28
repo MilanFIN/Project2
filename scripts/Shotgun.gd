@@ -11,6 +11,7 @@ func _ready() -> void:
 	pass # Replace with function body.
 
 func fire():
+	reduceAmmo()
 	get_node("Sprite").frame = 0
 	get_node("Sprite").play()
 	for i in range(1,6):

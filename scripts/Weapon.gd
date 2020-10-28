@@ -2,7 +2,7 @@ extends Node2D
 class_name Weapon
 
 var ammo = 0
-
+export var delay = 333 #ms
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -18,6 +18,9 @@ func reduceAmmo():
 func addAmmo(amount):
 	ammo += amount
 	
+func getDelay():
+	return delay
+
 func fire():
 	pass
 
