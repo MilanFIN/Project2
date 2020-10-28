@@ -91,6 +91,8 @@ func getDamage():
 func takeDamage(dmg):
 	self.hp -= dmg
 
+func heal(amount):
+	self.hp += amount
 
 func setWeapon(weap):
 	currentWeapon = weap
