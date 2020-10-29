@@ -62,12 +62,14 @@ func _physics_process(delta: float):
 			var player = get_tree().get_root().get_node("Game/Player")
 			player.takeDamage(damage)
 
+			var attack
 			if (effectExists):
 				var attackFile = load("res://effects/"+name+"attack.tscn")
-				var attack = attackFile.instance()
-				attack.position = player.position
-				get_parent().add_child(attack)
-
+				attack = attackFile.instance()
+			else:
+				var attackFile = load("res://effects/Genericattack.tscn")
+				attack = attackFile.instance()
+			player.add_child(attack)
 			messageBox.showMessage("a " +name+" attacked you")
 
 	if (message != ""):
@@ -92,6 +94,15 @@ func act():
 		queue_free()
 	else:
 		message = "You attacked a " + name
+
+	var attack
+	if (effectExists):
+		var attackFile = load("res://effects/"+name+"attack.tscn")
+		attack = attackFile.instance()
+	else:
+		var attackFile = load("res://effects/Genericattack.tscn")
+		attack = attackFile.instance()
+	add_child(attack)
 
 
 

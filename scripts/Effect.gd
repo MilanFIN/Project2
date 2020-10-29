@@ -10,8 +10,7 @@ extends AnimatedSprite
 func _ready() -> void:
 	frame = 0
 	play()
-	print("playing")
-	pass # Replace with function body.
+
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
