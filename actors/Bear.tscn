@@ -11,6 +11,8 @@ collision_layer = 4
 script = ExtResource( 2 )
 speed = 20
 hp = 10
+actDelay = 1000
+damage = 30
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )

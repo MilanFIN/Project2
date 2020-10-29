@@ -6,7 +6,7 @@ var tilemap = null
 func _ready() -> void:
 
 	start()
-	VisualServer.set_default_clear_color(Color(1,1,1,1.0))
+	VisualServer.set_default_clear_color(Color(0,0,0,1.0))
 
 
 
@@ -28,10 +28,12 @@ func changeMap(mapname):
 	
 	
 	player.position = Vector2(mapNode.startX, mapNode.startY) * 32 + Vector2(16, 16)
+	player.mapChange()
 	tilemap = mapNode.get_node("TileMap")
 	player.tilemap = mapNode.get_node("TileMap")
 
-
+	get_node("HUD/LevelName").text = mapname
+	Global.level = mapname
 
 
 func _physics_process(delta: float) -> void:

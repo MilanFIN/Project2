@@ -5,7 +5,7 @@ class_name Ai
 var entity
 var player
 var followDistance = 300
-var attackDistance = 50
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -28,7 +28,7 @@ func getDirection():
 		return Vector2(0,0)
 
 
-func shouldAttack():
+func shouldAttack(attackDistance):
 	var playerPos = player.position
 	var entityPos = entity.position
 	return (playerPos.distance_to(entityPos) < attackDistance)

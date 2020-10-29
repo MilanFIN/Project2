@@ -4,7 +4,9 @@ extends Actor
 export var speed = 30
 export var hp = 3
 export var drop = ""
-
+export var actDelay = 333
+export var damage = 3
+export var attackDistance = 50
 
 var velocity = Vector2.ZERO
 
@@ -12,12 +14,18 @@ var velocity = Vector2.ZERO
 var ai
 var sprite
 
+
 var timeSinceLastAction
 
 var message = ""
 
+var effectExists = false
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	
+
 	type = "Enemy"
 	
 	velocity.x = -speed
@@ -26,6 +34,9 @@ func _ready():
 	ai = preload("res://scripts/Ai.gd").new()
 	ai.init(self, get_tree().get_root().get_node("Game/Player"))
 	sprite = get_node("Sprite")
+
+	var file2Check = File.new()
+	effectExists = file2Check.file_exists("res://effects/"+name+"attack.tscn")
 
 
 func _physics_process(delta: float):
@@ -45,11 +56,18 @@ func _physics_process(delta: float):
 		sprite.set_flip_h(false)
 		
 
-	if (ai.shouldAttack()):
+	if (ai.shouldAttack(attackDistance)):
 		if (OS.get_ticks_msec() - timeSinceLastAct > actDelay):
 			timeSinceLastAct = OS.get_ticks_msec()
 			var player = get_tree().get_root().get_node("Game/Player")
-			player.takeDamage(3)
+			player.takeDamage(damage)
+
+			if (effectExists):
+				var attackFile = load("res://effects/"+name+"attack.tscn")
+				var attack = attackFile.instance()
+				attack.position = player.position
+				get_parent().add_child(attack)
+
 			messageBox.showMessage("a " +name+" attacked you")
 
 	if (message != ""):
@@ -69,6 +87,7 @@ func act():
 		if (drop != ""):
 			var dropFile = load("res://actors/"+drop+".tscn")
 			var dropNode = dropFile.instance()
+			dropNode.position = position
 			get_parent().add_child(dropNode)
 		queue_free()
 	else:

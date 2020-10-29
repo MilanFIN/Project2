@@ -4,7 +4,7 @@ class_name Actor
 var messageBox
 
 var timeSinceLastAct = OS.get_ticks_msec()
-var actDelay = 333.0
+
 
 var type = ""
 

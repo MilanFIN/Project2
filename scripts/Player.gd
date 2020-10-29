@@ -11,9 +11,9 @@ var screenSize
 
 var maxHp = 100.0
 var hp = maxHp
-var frostDps = 3.0
+var frostDps = 6.0
 var runHealRate = 0.010
-var warmHealRate = 2
+var warmHealRate = 10
 
 var weapons = []
 var currentWeapon = 0
@@ -24,7 +24,7 @@ var currentWeapon = 0
 
 var moveDirection = Vector2(0,0)
 
-
+var actDelay = 333.0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -132,10 +132,13 @@ func checkAlive():
 func restart():
 	#position = 32* Vector2(2, 3)
 	hp = 100.0
+	weapons[1].ammo = 0
+	weapons[2].ammo = 0
 	messageBox.showMessage("Game has restarted.")
 
 
-	
+func mapChange():
+	hp = maxHp
 	
 	
 	

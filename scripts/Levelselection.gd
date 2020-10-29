@@ -9,9 +9,11 @@ func _ready() -> void:
 	var levelcontainer = get_node("ScrollContainer/Levelcontainer")
 
 	for level in levelList:
-		var button = Button.new()
+		var buttonRes = preload("res://menu/LevelButton.tscn")
+		var button = buttonRes.instance()
 		button.text = level
 		button.name = level
+		button.flat = true
 		button.connect("pressed", self, "_on_button_press", [button])
 		levelcontainer.add_child(button)
 	pass # Replace with function body.
@@ -53,3 +55,8 @@ func listLevels():
 	
 	levels.sort()
 	return levels
+
+
+func _on_Back_pressed() -> void:
+	get_tree().change_scene("res://menu/Mainmenu.tscn")
+	pass # Replace with function body.
