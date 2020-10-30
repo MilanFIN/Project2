@@ -16,7 +16,7 @@ outline_color = Color( 0, 0, 0, 1 )
 font_data = SubResource( 2 )
 
 [node name="Infosign" type="KinematicBody2D"]
-collision_layer = 8
+collision_layer = 12
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
