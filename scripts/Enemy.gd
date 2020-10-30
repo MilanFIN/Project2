@@ -50,6 +50,10 @@ func _physics_process(delta: float):
 	#		velocity.y *= -1
 	
 	velocity = ai.getDirection() * speed
+	if (velocity.length_squared() != 0):
+		sprite.play()
+	else:
+		sprite.stop()
 	if (velocity.x > 0):
 		sprite.set_flip_h(true)
 	else:
