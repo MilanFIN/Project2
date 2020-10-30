@@ -22,7 +22,7 @@ animations = [ {
 } ]
 
 [node name="Attack" type="AnimatedSprite"]
-z_index = 10
+z_index = 9
 frames = SubResource( 3 )
 script = ExtResource( 2 )
 [connection signal="animation_finished" from="." to="." method="_on_animation_finished"]

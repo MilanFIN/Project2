@@ -1,9 +1,32 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://actors/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scripts/Game.gd" type="Script" id=3]
 [ext_resource path="res://scripts/Messages.gd" type="Script" id=4]
 [ext_resource path="res://scripts/HealthBar.gd" type="Script" id=5]
+
+[sub_resource type="Shader" id=13]
+code = "shader_type canvas_item;
+
+uniform float brightness = 0.3;
+uniform float contrast = 1.0;
+uniform float saturation = 1.0;
+
+void fragment() {
+    vec3 c = textureLod(SCREEN_TEXTURE, SCREEN_UV, 0.0).rgb;
+
+    c.rgb = mix(vec3(0.0), c.rgb, brightness);
+    c.rgb = mix(vec3(0.5), c.rgb, contrast);
+    c.rgb = mix(vec3(dot(vec3(1.0), c.rgb) * 0.33333), c.rgb, saturation);
+
+    COLOR.rgb = c;
+}"
+
+[sub_resource type="ShaderMaterial" id=14]
+shader = SubResource( 13 )
+shader_param/brightness = 0.3
+shader_param/contrast = 1.0
+shader_param/saturation = 1.0
 
 [sub_resource type="DynamicFontData" id=1]
 font_path = "res://fonts/Roboto-Black.ttf"
@@ -57,6 +80,20 @@ font_data = SubResource( 11 )
 script = ExtResource( 3 )
 
 [node name="LevelContainer" type="Node2D" parent="."]
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 512, 296 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+visible = false
+material = SubResource( 14 )
+margin_right = 3840.0
+margin_bottom = 2160.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="HUD" type="CanvasLayer" parent="."]
 
@@ -138,5 +175,5 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 512, 296 )
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color( 0.117647, 0.117647, 0.117647, 1 )
