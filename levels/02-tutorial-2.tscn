@@ -1,20 +1,20 @@
 [gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://tilesets/Tileset1.tres" type="TileSet" id=1]
-[ext_resource path="res://actors/Wolf.tscn" type="PackedScene" id=2]
-[ext_resource path="res://scripts/Level.gd" type="Script" id=3]
-[ext_resource path="res://tilesets/OverlayTileset1.tres" type="TileSet" id=4]
-[ext_resource path="res://actors/Infosign.tscn" type="PackedScene" id=5]
-[ext_resource path="res://actors/Fire.tscn" type="PackedScene" id=6]
+[ext_resource path="res://tilesets/OverlayTileset1.tres" type="TileSet" id=1]
+[ext_resource path="res://scripts/Level.gd" type="Script" id=2]
+[ext_resource path="res://tilesets/Tileset1.tres" type="TileSet" id=3]
+[ext_resource path="res://actors/Fire.tscn" type="PackedScene" id=4]
+[ext_resource path="res://actors/Wolf.tscn" type="PackedScene" id=5]
+[ext_resource path="res://actors/Infosign.tscn" type="PackedScene" id=6]
 [ext_resource path="res://actors/Ladder.tscn" type="PackedScene" id=7]
 
 [node name="Level" type="Node2D"]
-script = ExtResource( 3 )
+script = ExtResource( 2 )
 startX = 5
 startY = -6
 
 [node name="TileMap" type="TileMap" parent="."]
-tile_set = ExtResource( 1 )
+tile_set = ExtResource( 3 )
 cell_size = Vector2( 32, 32 )
 cell_quadrant_size = 32
 cell_custom_transform = Transform2D( 0, 0, 0, 0, 0, 0 )
@@ -24,29 +24,29 @@ tile_data = PoolIntArray( -524284, 1, 0, -524283, 1, 0, -524282, 1, 0, -524281, 
 [node name="OverlayTilemap" type="TileMap" parent="."]
 position = Vector2( 0, -16 )
 z_index = 10
-tile_set = ExtResource( 4 )
+tile_set = ExtResource( 1 )
 cell_size = Vector2( 32, 32 )
 cell_quadrant_size = 32
 cell_custom_transform = Transform2D( 0, 0, 0, 0, 0, 0 )
 format = 1
 tile_data = PoolIntArray( -524285, 0, 0, -524284, 0, 0, -524283, 1, 0, -524282, 1, 0, -524281, 1, 0, -524280, 1, 0, -524279, 1, 0, -524278, 1, 0, -524277, 0, 0, -524276, 0, 0, -458749, 0, 0, -458748, 1, 0, -458741, 1, 0, -458740, 0, 0, -393213, 0, 0, -393204, 0, 0, -327677, 0, 0, -327668, 0, 0, -262141, 0, 0, -262132, 0, 0, -196607, 0, 0, -196606, 0, 0, -196605, 0, 0, -196604, 2, 0, -196603, 2, 0, -196602, 2, 0, -196601, 2, 0, -196598, 2, 0, -196597, 2, 0, -196596, 0, 0, -196595, 0, 0, -131071, 0, 0, -131059, 0, 0, -65536, 0, 0, -65535, 1, 0, -65524, 2, 0, -65523, 0, 0, 0, 0, 0, 11, 2, 0, 12, 0, 0, 13, 0, 0, 65536, 0, 0, 65547, 0, 0, 65548, 0, 0, 131072, 0, 0, 131073, 2, 0, 131074, 2, 0, 131075, 2, 0, 131076, 2, 0, 131077, 2, 0, 131078, 2, 0, 131079, 2, 0, 131080, 2, 0, 131081, 2, 0, 131082, 2, 0, 131083, 0, 0, 196608, 0, 0, 196609, 0, 0, 196610, 0, 0, 196611, 0, 0, 196612, 0, 0, 196613, 0, 0, 196614, 0, 0, 196615, 0, 0, 196616, 0, 0, 196617, 0, 0, 196618, 0, 0, 196619, 0, 0 )
 
-[node name="Wolf" parent="." instance=ExtResource( 2 )]
+[node name="Wolf" parent="." instance=ExtResource( 5 )]
 position = Vector2( 208, -48 )
 
-[node name="Fire" parent="." instance=ExtResource( 6 )]
+[node name="Fire" parent="." instance=ExtResource( 4 )]
 position = Vector2( 192, 32 )
 
-[node name="Fire2" parent="." instance=ExtResource( 6 )]
+[node name="Fire2" parent="." instance=ExtResource( 4 )]
 position = Vector2( 320, -24 )
 
-[node name="Fire3" parent="." instance=ExtResource( 6 )]
+[node name="Fire3" parent="." instance=ExtResource( 4 )]
 position = Vector2( 304, -176 )
 
 [node name="Ladder" parent="." instance=ExtResource( 7 )]
 position = Vector2( 80, 0 )
-targetMap = "Level3"
+targetMap = "03-tutorial-3"
 
-[node name="Infosign" parent="." instance=ExtResource( 5 )]
+[node name="Infosign" parent="." instance=ExtResource( 6 )]
 position = Vector2( 264, -173 )
 info = "Use 1,2&3 to change weapons, & left click to attack. The knife requires no ammo."
