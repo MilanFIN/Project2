@@ -2,7 +2,7 @@
 
 [ext_resource path="res://scripts/Actor.gd" type="Script" id=1]
 [ext_resource path="res://graphics/entities/fire.png" type="Texture" id=2]
-[ext_resource path="res://graphics/light/lightsource.png" type="Texture" id=3]
+[ext_resource path="res://graphics/light/light_512.png" type="Texture" id=3]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 16.0
@@ -20,9 +20,9 @@ texture = ExtResource( 2 )
 [node name="Light2D" type="Light2D" parent="."]
 texture = ExtResource( 3 )
 texture_scale = 0.5
-color = Color( 0.976471, 0.890196, 0.631373, 1 )
+color = Color( 0.945098, 0.952941, 0.705882, 1 )
 energy = 0.7
 range_z_max = 9
 shadow_enabled = true
-shadow_gradient_length = 30.0
+shadow_filter = 3
 shadow_filter_smooth = 20.0
