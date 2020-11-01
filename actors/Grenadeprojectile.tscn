@@ -1,13 +1,13 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://graphics/entities/enemy.png" type="Texture" id=1]
-[ext_resource path="res://scripts/Enemy.gd" type="Script" id=2]
+[ext_resource path="res://graphics/player/grenade.png" type="Texture" id=1]
+[ext_resource path="res://scripts/Grenadeprojectile.gd" type="Script" id=2]
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 16.0
+radius = 8.0
 
-[node name="Bullet" type="KinematicBody2D"]
-collision_layer = 4
+[node name="GrenadeProjectile" type="KinematicBody2D"]
+collision_mask = 0
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]

@@ -31,6 +31,7 @@ func _ready():
 	weapons.append(get_node("Knife"))
 	weapons.append(get_node("Pistol"))
 	weapons.append(get_node("Shotgun"))
+	weapons.append(get_node("Grenade"))
 	healthBar = get_tree().get_root().get_node("Game/HUD/HealthBar")
 
 
