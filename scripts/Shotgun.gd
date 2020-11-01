@@ -12,8 +12,8 @@ func _ready() -> void:
 
 func fire():
 	reduceAmmo()
-	get_node("Sprite").frame = 0
-	get_node("Sprite").play()
+	get_node("Muzzle").frame = 0
+	get_node("Muzzle").play()
 	for i in range(1,6):
 		var ray =get_node("Shotgunray"+str(i))
 		if (ray.is_colliding()):
