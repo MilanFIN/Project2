@@ -8,6 +8,7 @@ extends Weapon
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	damage = 2
 	pass # Replace with function body.
 
 func fire():
@@ -20,7 +21,7 @@ func fire():
 			var target = ray.get_collider()
 			if not(target is  TileMap):
 				if (target.type == "Enemy"):
-					target.act()
+					target.takeDamage(damage)
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta: float) -> void:
 #	pass

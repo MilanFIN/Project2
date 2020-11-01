@@ -86,8 +86,7 @@ func _physics_process(delta):
 	hud.get_node("AmmoCount").text = str(weapons[currentWeapon].ammo)
 	hud.get_node("CurrentWeapon").text = str(weapons[currentWeapon].name)
 #replace with configurable value
-func getDamage():
-	return 1.0
+
 
 func takeDamage(dmg):
 	self.hp -= dmg

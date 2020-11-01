@@ -26,9 +26,10 @@ animations = [ {
 
 [node name="Wolf" type="KinematicBody2D"]
 collision_layer = 4
+collision_mask = 5
 script = ExtResource( 2 )
 speed = 40
-hp = 2
+hp = 4
 damage = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -36,5 +37,4 @@ shape = SubResource( 1 )
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 4 )
-frame = 1
 playing = true

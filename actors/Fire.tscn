@@ -8,7 +8,6 @@
 radius = 16.0
 
 [node name="Fire" type="KinematicBody2D"]
-collision_layer = 4
 script = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

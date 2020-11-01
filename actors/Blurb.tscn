@@ -27,7 +27,7 @@ animations = [ {
 [node name="Blurb" type="KinematicBody2D"]
 collision_layer = 4
 script = ExtResource( 2 )
-hp = 5
+hp = 25
 actDelay = 500
 damage = 6
 

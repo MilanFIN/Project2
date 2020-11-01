@@ -81,6 +81,33 @@ func _physics_process(delta: float):
 	message = ""
 
 
+func takeDamage(dmg):
+	hp -= dmg
+
+	if (hp <= 0):
+		message = "The " +name+" died"
+		
+		if (drop != ""):
+			var dropFile = load("res://actors/"+drop+".tscn")
+			var dropNode = dropFile.instance()
+			dropNode.position = position
+			get_parent().add_child(dropNode)
+		queue_free()
+	else:
+		message = "You attacked a " + name
+
+	var attack
+	if (effectExists):
+		var attackFile = load("res://effects/"+name+"attack.tscn")
+		attack = attackFile.instance()
+	else:
+		var attackFile = load("res://effects/Genericattack.tscn")
+		attack = attackFile.instance()
+	add_child(attack)
+
+
+
+
 func act():
 	var player = get_tree().get_root().get_node("Game/Player")
 

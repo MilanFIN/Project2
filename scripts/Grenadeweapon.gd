@@ -8,6 +8,7 @@ extends Weapon
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	ammo = 100
+
 	pass # Replace with function body.
 
 
@@ -21,7 +22,7 @@ func fire():
 	var grndfile = load("res://actors/Grenadeprojectile.tscn")
 	var grenadeProj = grndfile.instance()
 
-	#print(global_rotation)
+
 	
 	var dir = Vector2(-1,0).rotated(global_rotation)
 	
