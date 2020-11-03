@@ -140,10 +140,17 @@ func restart():
 func mapChange():
 	hp = maxHp
 	
-	
-	
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+func prevWeapon():
+	if (currentWeapon > 0):
+		currentWeapon -= 1
+	else:
+		currentWeapon = len(weapons) -1
+
+func nextWeapon():
+
+	if (currentWeapon < len(weapons)-1):
+		currentWeapon += 1
+	else:
+		currentWeapon = 0
 

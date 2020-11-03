@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://tilesets/OverlayTileset1.tres" type="TileSet" id=1]
 [ext_resource path="res://scripts/Level.gd" type="Script" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://actors/Shells.tscn" type="PackedScene" id=8]
 [ext_resource path="res://actors/Healthpickup.tscn" type="PackedScene" id=9]
 [ext_resource path="res://actors/Infosign.tscn" type="PackedScene" id=10]
+[ext_resource path="res://actors/grenadepickup.tscn" type="PackedScene" id=11]
 
 [node name="Level" type="Node2D"]
 script = ExtResource( 2 )
@@ -66,3 +67,6 @@ targetMap = "04-starting for real"
 
 [node name="Fire3" parent="." instance=ExtResource( 7 )]
 position = Vector2( 80, -96 )
+
+[node name="GrenadePickup" parent="." instance=ExtResource( 11 )]
+position = Vector2( 184, -72 )

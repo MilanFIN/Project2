@@ -65,7 +65,18 @@ func _physics_process(delta: float) -> void:
 
 	if (Input.is_mouse_button_pressed(BUTTON_RIGHT)):
 		player.secondaryAction()
-
 	if (not player.checkAlive()):
 		start()
+
+
+func _input(event):
+
+	if event is InputEventMouseButton:
+		if event.is_pressed():
+			var player = get_node("Player")
+			if event.button_index == BUTTON_WHEEL_UP:
+				player.prevWeapon()
 	
+			if event.button_index == BUTTON_WHEEL_DOWN:
+				player.nextWeapon()
+
