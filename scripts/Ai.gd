@@ -32,6 +32,8 @@ func shouldAttack(attackDistance):
 	var playerPos = player.position
 	var entityPos = entity.position
 	return (playerPos.distance_to(entityPos) < attackDistance)
+	
+	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta: float) -> void:
 #	pass

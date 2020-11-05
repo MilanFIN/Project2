@@ -62,15 +62,20 @@ animations = [ {
 collision_layer = 4
 collision_mask = 5
 script = ExtResource( 2 )
+actDelay = 777
+attackDistance = 300
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 6 )
-frame = 2
 playing = true
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Sprite"]
 position = Vector2( -31.6153, -3.38557 )
 frames = SubResource( 10 )
+
+[node name="ShotRay" type="RayCast2D" parent="."]
+enabled = true
+collision_mask = 13
