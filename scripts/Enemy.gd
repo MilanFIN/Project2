@@ -1,5 +1,5 @@
 extends Actor
-
+class_name Enemy
 
 export var speed = 30
 export var hp = 3
@@ -61,25 +61,35 @@ func _physics_process(delta: float):
 		
 
 	if (ai.shouldAttack(attackDistance)):
-		if (OS.get_ticks_msec() - timeSinceLastAct > actDelay):
-			timeSinceLastAct = OS.get_ticks_msec()
-			var player = get_tree().get_root().get_node("Game/Player")
-			player.takeDamage(damage)
+		attack()
 
-			var attack
-			if (effectExists):
-				var attackFile = load("res://effects/"+name+"attack.tscn")
-				attack = attackFile.instance()
-			else:
-				var attackFile = load("res://effects/Genericattack.tscn")
-				attack = attackFile.instance()
-			player.add_child(attack)
-			messageBox.showMessage("a " +name+" attacked you")
 
 	if (message != ""):
 		messageBox.showMessage(message)
 	message = ""
 
+
+func attackAnimation():
+	pass
+
+func attack():
+	if (OS.get_ticks_msec() - timeSinceLastAct > actDelay):
+		timeSinceLastAct = OS.get_ticks_msec()
+		var player = get_tree().get_root().get_node("Game/Player")
+		player.takeDamage(damage)
+
+		var attack
+		if (effectExists):
+			var attackFile = load("res://effects/"+name+"attack.tscn")
+			attack = attackFile.instance()
+		else:
+			var attackFile = load("res://effects/Genericattack.tscn")
+			attack = attackFile.instance()
+		player.add_child(attack)
+		messageBox.showMessage("a " +name+" attacked you")
+		
+		attackAnimation()
+		
 
 func takeDamage(dmg):
 	hp -= dmg
