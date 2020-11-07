@@ -74,3 +74,5 @@ position = Vector2( 184, -72 )
 
 [node name="Blurbsoldier" parent="." instance=ExtResource( 12 )]
 position = Vector2( 168, -32 )
+speed = 20
+damage = 0
