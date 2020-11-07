@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://tilesets/OverlayTileset1.tres" type="TileSet" id=1]
 [ext_resource path="res://scripts/Level.gd" type="Script" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://actors/Ladder.tscn" type="PackedScene" id=4]
 [ext_resource path="res://actors/Fire.tscn" type="PackedScene" id=5]
 [ext_resource path="res://actors/Infosign.tscn" type="PackedScene" id=6]
+[ext_resource path="res://props/blurbvat.tscn" type="PackedScene" id=7]
 
 [node name="Level" type="Node2D"]
 script = ExtResource( 2 )
@@ -53,3 +54,12 @@ position = Vector2( 200, -48 )
 
 [node name="Fire3" parent="." instance=ExtResource( 5 )]
 position = Vector2( 80, -72 )
+
+[node name="BlurbVat" parent="." instance=ExtResource( 7 )]
+position = Vector2( 112, -208 )
+
+[node name="BlurbVat2" parent="." instance=ExtResource( 7 )]
+position = Vector2( 144, -208 )
+
+[node name="BlurbVat3" parent="." instance=ExtResource( 7 )]
+position = Vector2( 176, -208 )
