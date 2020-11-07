@@ -54,11 +54,15 @@ func _physics_process(delta: float):
 		sprite.play()
 	else:
 		sprite.stop()
+	var flip = false
 	if (velocity.x > 0):
-		sprite.set_flip_h(true)
+		flip = true
 	else:
-		sprite.set_flip_h(false)
-		
+		flip = false
+	if (flip != sprite.flip_h):
+		rotateMuzzle()
+	sprite.set_flip_h(flip)
+
 
 	if (ai.shouldAttack(attackDistance)):
 		if (OS.get_ticks_msec() - timeSinceLastAct > actDelay):
@@ -152,7 +156,8 @@ func act():
 	add_child(attack)
 
 
-
+func rotateMuzzle():
+	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta: float):

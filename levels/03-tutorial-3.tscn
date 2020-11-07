@@ -11,7 +11,7 @@
 [ext_resource path="res://actors/Healthpickup.tscn" type="PackedScene" id=9]
 [ext_resource path="res://actors/Infosign.tscn" type="PackedScene" id=10]
 [ext_resource path="res://actors/grenadepickup.tscn" type="PackedScene" id=11]
-[ext_resource path="res://actors/Soldier.tscn" type="PackedScene" id=12]
+[ext_resource path="res://actors/Blurbsoldier.tscn" type="PackedScene" id=12]
 
 [node name="Level" type="Node2D"]
 script = ExtResource( 2 )
@@ -72,5 +72,5 @@ position = Vector2( 80, -96 )
 [node name="GrenadePickup" parent="." instance=ExtResource( 11 )]
 position = Vector2( 184, -72 )
 
-[node name="Soldier" parent="." instance=ExtResource( 12 )]
-position = Vector2( 168, 104 )
+[node name="Blurbsoldier" parent="." instance=ExtResource( 12 )]
+position = Vector2( 168, -32 )

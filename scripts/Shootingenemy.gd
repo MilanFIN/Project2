@@ -8,6 +8,7 @@ extends Enemy
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+
 	pass # Replace with function body.
 
 func clearSight():
@@ -22,12 +23,14 @@ func clearSight():
 
 
 func attackAnimation():
-	get_node("Sprite/AnimatedSprite").frame = 0
-	get_node("Sprite/AnimatedSprite").play()
+	get_node("Muzzle").frame = 0
+	get_node("Muzzle").play()
 	
 func attack():
 	if (clearSight()):
 		doDamage()
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta: float) -> void:
-#	pass
+		
+func rotateMuzzle():
+	var muzzle = get_node("Muzzle")
+	muzzle.position.x = -muzzle.position.x
+	muzzle.rotation_degrees =  fmod(muzzle.rotation_degrees + 180, 360)
