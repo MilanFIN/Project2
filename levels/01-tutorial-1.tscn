@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://tilesets/OverlayTileset1.tres" type="TileSet" id=1]
 [ext_resource path="res://scripts/Level.gd" type="Script" id=2]
@@ -7,6 +7,10 @@
 [ext_resource path="res://actors/Fire.tscn" type="PackedScene" id=5]
 [ext_resource path="res://actors/Infosign.tscn" type="PackedScene" id=6]
 [ext_resource path="res://props/blurbvat.tscn" type="PackedScene" id=7]
+[ext_resource path="res://actors/InfoComputer.tscn" type="PackedScene" id=8]
+[ext_resource path="res://props/brokenblurbvat.tscn" type="PackedScene" id=9]
+[ext_resource path="res://props/deadscientist.tscn" type="PackedScene" id=10]
+[ext_resource path="res://actors/Mouse.tscn" type="PackedScene" id=11]
 
 [node name="Level" type="Node2D"]
 script = ExtResource( 2 )
@@ -58,8 +62,18 @@ position = Vector2( 80, -72 )
 [node name="BlurbVat" parent="." instance=ExtResource( 7 )]
 position = Vector2( 112, -208 )
 
-[node name="BlurbVat2" parent="." instance=ExtResource( 7 )]
-position = Vector2( 144, -208 )
-
 [node name="BlurbVat3" parent="." instance=ExtResource( 7 )]
 position = Vector2( 176, -208 )
+
+[node name="InfoComputer" parent="." instance=ExtResource( 8 )]
+position = Vector2( 144, -176 )
+info = "-----"
+
+[node name="BlurbVat2" parent="." instance=ExtResource( 9 )]
+position = Vector2( 144, -208 )
+
+[node name="DeadScientist" parent="." instance=ExtResource( 10 )]
+position = Vector2( 96, -152 )
+
+[node name="Mouse" parent="." instance=ExtResource( 11 )]
+position = Vector2( 184, -112 )
