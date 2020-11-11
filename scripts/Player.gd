@@ -18,13 +18,13 @@ var warmHealRate = 10
 var weapons = []
 var currentWeapon = 0
 
-#var weaponVisibility = [true, false, false] # melee, pistol, shotgun
-#var ammo = [0,5,5] #melee, pistol, shotgun
-
-
 var moveDirection = Vector2(0,0)
 
 var actDelay = 333.0
+
+
+var moveDistanceSinceFootprint = 0.0
+var lastFootprint = 0 #type 0 to x
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -51,6 +51,9 @@ func _physics_process(delta):
 
 	var velocity = moveDirection * speed
 	move_and_slide(velocity)
+	
+	moveDistanceSinceFootprint += velocity.length_squared() * delta
+	spawnFootprint()
 	
 	moveDirection = Vector2(0,0)
 	
@@ -105,6 +108,7 @@ func primaryAction():
 			weapons[currentWeapon].fire()
 		else:
 			outOfAmmo()
+			
 
 func secondaryAction():
 	if (OS.get_ticks_msec() - timeSinceLastAct > actDelay):
@@ -154,3 +158,16 @@ func nextWeapon():
 	else:
 		currentWeapon = 0
 
+func spawnFootprint():
+	
+	if (moveDistanceSinceFootprint > 15000):
+		lastFootprint += 1
+		if (lastFootprint > 1):
+			lastFootprint = 0
+		var footprintRes = load("res://effects/Footprints.tscn")
+		var footprint = footprintRes.instance()
+		footprint.position = position
+		footprint.rotation = rotation
+		footprint.setStage(lastFootprint)
+		get_parent().get_node("FootprintContainer").add_child(footprint)
+		moveDistanceSinceFootprint = 0

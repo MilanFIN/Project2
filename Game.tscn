@@ -81,6 +81,8 @@ script = ExtResource( 3 )
 
 [node name="LevelContainer" type="Node2D" parent="."]
 
+[node name="FootprintContainer" type="Node2D" parent="."]
+
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 512, 296 )
 

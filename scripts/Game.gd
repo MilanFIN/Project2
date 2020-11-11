@@ -20,6 +20,10 @@ func changeMap(mapname):
 	var player = get_node("Player")
 	for n in levelContainer.get_children():
 		n.queue_free()
+
+	var footprints = get_node("FootprintContainer")
+	for n in footprints.get_children():
+		n.queue_free()
 	var mapFile = load("res://levels/"+mapname+".tscn")
 	var mapNode = mapFile.instance()
 	mapNode.name = mapname
