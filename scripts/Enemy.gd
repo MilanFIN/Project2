@@ -104,6 +104,16 @@ func attack():
 func takeDamage(dmg):
 	hp -= dmg
 
+
+	var attack
+	if (effectExists):
+		var attackFile = load("res://effects/"+name+"attack.tscn")
+		attack = attackFile.instance()
+	else:
+		var attackFile = load("res://effects/Genericattack.tscn")
+		attack = attackFile.instance()
+	add_child(attack)
+
 	if (hp <= 0):
 		message = "The " +name+" died"
 		
@@ -115,16 +125,6 @@ func takeDamage(dmg):
 		queue_free()
 	else:
 		message = "You attacked a " + name
-
-	var attack
-	if (effectExists):
-		var attackFile = load("res://effects/"+name+"attack.tscn")
-		attack = attackFile.instance()
-	else:
-		var attackFile = load("res://effects/Genericattack.tscn")
-		attack = attackFile.instance()
-	add_child(attack)
-
 
 
 

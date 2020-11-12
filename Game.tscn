@@ -170,9 +170,11 @@ margin_left = 848.0
 margin_top = 16.0
 margin_right = 976.0
 margin_bottom = 48.0
+grow_horizontal = 0
 custom_fonts/font = SubResource( 14 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "LEVEL"
+align = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
