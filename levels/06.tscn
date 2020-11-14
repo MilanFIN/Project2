@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://tilesets/Tileset1.tres" type="TileSet" id=1]
 [ext_resource path="res://scripts/Level.gd" type="Script" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://actors/Healthpickup.tscn" type="PackedScene" id=5]
 [ext_resource path="res://actors/Bullets.tscn" type="PackedScene" id=6]
 [ext_resource path="res://actors/Wolf.tscn" type="PackedScene" id=7]
+[ext_resource path="res://actors/Ladder.tscn" type="PackedScene" id=8]
 
 [node name="Level" type="Node2D"]
 script = ExtResource( 2 )
@@ -64,3 +65,7 @@ drop = "Healthpickup"
 
 [node name="Wolf" parent="." instance=ExtResource( 7 )]
 position = Vector2( -184, -1072 )
+
+[node name="Ladder" parent="." instance=ExtResource( 8 )]
+position = Vector2( -176, -800 )
+targetMap = "07"
