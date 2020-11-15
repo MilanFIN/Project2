@@ -19,7 +19,8 @@ func fire():
 		var ray =get_node("Shotgunray"+str(i))
 		if (ray.is_colliding()):
 			var target = ray.get_collider()
-			if not(target is  TileMap):
+			if (target is KinematicBody2D):
+			#if not(target is  TileMap):
 				if (target.type == "Enemy"):
 					target.takeDamage(damage)
 # Called every frame. 'delta' is the elapsed time since the previous frame.

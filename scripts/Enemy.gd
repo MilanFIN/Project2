@@ -20,7 +20,7 @@ var timeSinceLastAction
 var message = ""
 
 var effectExists = false
-
+var alive = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -104,7 +104,8 @@ func attack():
 func takeDamage(dmg):
 	hp -= dmg
 
-
+	if (not alive):
+		return
 	var attack
 	if (effectExists):
 		var attackFile = load("res://effects/"+name+"attack.tscn")
@@ -115,6 +116,7 @@ func takeDamage(dmg):
 	add_child(attack)
 
 	if (hp <= 0):
+		
 		message = "The " +name+" died"
 		
 		if (drop != ""):
@@ -122,6 +124,7 @@ func takeDamage(dmg):
 			var dropNode = dropFile.instance()
 			dropNode.position = position
 			get_parent().add_child(dropNode)
+		alive = false
 		queue_free()
 	else:
 		message = "You attacked a " + name
