@@ -86,7 +86,10 @@ func _physics_process(delta):
 		target.look()
 	
 	var hud = get_tree().get_root().get_node("Game/HUD")
-	hud.get_node("AmmoCount").text = str(weapons[currentWeapon].ammo)
+	if (weapons[currentWeapon].ammo < 0):
+		hud.get_node("AmmoCount").text = "∞"
+	else:
+		hud.get_node("AmmoCount").text = str(weapons[currentWeapon].ammo)
 	hud.get_node("CurrentWeapon").text = str(weapons[currentWeapon].name)
 #replace with configurable value
 
