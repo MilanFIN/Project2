@@ -70,7 +70,7 @@ shape = SubResource( 1 )
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 6 )
-frame = 2
+frame = 3
 playing = true
 
 [node name="Muzzle" type="AnimatedSprite" parent="."]
@@ -79,4 +79,5 @@ frames = SubResource( 10 )
 
 [node name="ShotRay" type="RayCast2D" parent="."]
 enabled = true
+cast_to = Vector2( 0, 5000 )
 collision_mask = 13

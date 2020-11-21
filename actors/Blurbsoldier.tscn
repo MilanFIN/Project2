@@ -70,4 +70,5 @@ frames = SubResource( 8 )
 
 [node name="ShotRay" type="RayCast2D" parent="."]
 enabled = true
+cast_to = Vector2( 0, 5000 )
 collision_mask = 13
