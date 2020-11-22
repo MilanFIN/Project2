@@ -18,8 +18,9 @@ func fire():
 	if (get_node("fireRay").is_colliding()):
 		var target = get_node("fireRay").get_collider()
 		if not(target is  TileMap):
-			if (target.type == "Enemy"):
-				target.takeDamage(damage)
+			if (target != null):
+				if (target.type == "Enemy"):
+					target.takeDamage(damage)
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta: float) -> void:
 #	pass

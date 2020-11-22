@@ -21,8 +21,9 @@ func fire():
 			var target = ray.get_collider()
 			if (target is KinematicBody2D):
 			#if not(target is  TileMap):
-				if (target.type == "Enemy"):
-					target.takeDamage(damage)
+				if (target != null):
+					if (target.type == "Enemy"):
+						target.takeDamage(damage)
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta: float) -> void:
 #	pass

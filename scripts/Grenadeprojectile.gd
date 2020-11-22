@@ -1,4 +1,4 @@
-extends KinematicBody2D
+extends Actor
 
 var fuseMs = 2000
 var initTime = 0
