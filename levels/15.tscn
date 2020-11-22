@@ -1,10 +1,13 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://tilesets/Tileset1.tres" type="TileSet" id=1]
 [ext_resource path="res://scripts/Level.gd" type="Script" id=2]
 [ext_resource path="res://tilesets/OverlayTileset1.tres" type="TileSet" id=3]
+[ext_resource path="res://actors/Bullets.tscn" type="PackedScene" id=4]
 [ext_resource path="res://actors/Fire.tscn" type="PackedScene" id=5]
+[ext_resource path="res://actors/Blurb.tscn" type="PackedScene" id=6]
 [ext_resource path="res://actors/Ladder.tscn" type="PackedScene" id=7]
+[ext_resource path="res://actors/Blurbsoldier.tscn" type="PackedScene" id=8]
 
 [node name="Level" type="Node2D"]
 script = ExtResource( 2 )
@@ -34,3 +37,75 @@ position = Vector2( 48, -48 )
 [node name="Ladder" parent="." instance=ExtResource( 7 )]
 position = Vector2( 2704, -2576 )
 targetMap = "15"
+
+[node name="Blurbsoldier" parent="." instance=ExtResource( 8 )]
+position = Vector2( -24, -784 )
+drop = "Bullets"
+
+[node name="Blurbsoldier2" parent="." instance=ExtResource( 8 )]
+position = Vector2( 208, -696 )
+drop = "Bullets"
+
+[node name="Blurbsoldier3" parent="." instance=ExtResource( 8 )]
+position = Vector2( 64, -928 )
+drop = "Bullets"
+
+[node name="Blurbsoldier4" parent="." instance=ExtResource( 8 )]
+position = Vector2( 568, -1192 )
+drop = "Bullets"
+
+[node name="Bullets" parent="." instance=ExtResource( 4 )]
+position = Vector2( 16, -80 )
+
+[node name="Bullets2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 16, -120 )
+
+[node name="Bullets3" parent="." instance=ExtResource( 4 )]
+position = Vector2( -16, -104 )
+
+[node name="Blurbsoldier5" parent="." instance=ExtResource( 8 )]
+position = Vector2( 344, -1152 )
+drop = "Bullets"
+
+[node name="Blurb" parent="." instance=ExtResource( 6 )]
+position = Vector2( 576, -1640 )
+drop = "Healthpickup"
+
+[node name="Blurb2" parent="." instance=ExtResource( 6 )]
+position = Vector2( 912, -1800 )
+drop = "Healthpickup"
+
+[node name="Blurb3" parent="." instance=ExtResource( 6 )]
+position = Vector2( 720, -2080 )
+
+[node name="Blurb4" parent="." instance=ExtResource( 6 )]
+position = Vector2( 776, -2096 )
+
+[node name="Blurb5" parent="." instance=ExtResource( 6 )]
+position = Vector2( 968, -1824 )
+drop = "Healthpickup"
+
+[node name="Blurb6" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1432, -2280 )
+
+[node name="Blurb7" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1416, -2232 )
+drop = "Healthpickup"
+
+[node name="Blurb8" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1440, -2176 )
+drop = "Healthpickup"
+
+[node name="Blurb9" parent="." instance=ExtResource( 6 )]
+position = Vector2( 2160, -2528 )
+
+[node name="Blurb10" parent="." instance=ExtResource( 6 )]
+position = Vector2( 2112, -2416 )
+drop = "Healthpickup"
+
+[node name="Blurb11" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1936, -2840 )
+
+[node name="Blurb12" parent="." instance=ExtResource( 6 )]
+position = Vector2( 2496, -2184 )
+drop = "Healthpickup"

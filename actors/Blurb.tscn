@@ -27,7 +27,8 @@ animations = [ {
 [node name="Blurb" type="KinematicBody2D"]
 collision_layer = 4
 script = ExtResource( 2 )
-hp = 25
+speed = 50
+hp = 6
 actDelay = 500
 damage = 6
 
@@ -37,5 +38,4 @@ shape = SubResource( 1 )
 [node name="Sprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 4 )
 animation = "Blurb"
-frame = 1
 playing = true
