@@ -52,7 +52,7 @@ func _physics_process(delta):
 	var velocity = moveDirection * speed
 	move_and_slide(velocity)
 	
-	moveDistanceSinceFootprint += velocity.length_squared() * delta
+	moveDistanceSinceFootprint += velocity.length() * delta
 	spawnFootprint()
 	
 	moveDirection = Vector2(0,0)
@@ -163,7 +163,7 @@ func nextWeapon():
 
 func spawnFootprint():
 	
-	if (moveDistanceSinceFootprint > 15000):
+	if (moveDistanceSinceFootprint > 30):#15000
 		lastFootprint += 1
 		if (lastFootprint > 1):
 			lastFootprint = 0
