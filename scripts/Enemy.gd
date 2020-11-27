@@ -20,6 +20,7 @@ var timeSinceLastAction
 var message = ""
 
 var effectExists = false
+var visibleName = ""
 var alive = true
 
 # Called when the node enters the scene tree for the first time.
@@ -36,7 +37,12 @@ func _ready():
 	sprite = get_node("Sprite")
 
 	var file2Check = File.new()
-	effectExists = file2Check.file_exists("res://effects/"+name+"attack.tscn")
+	visibleName = name
+	for i in range(10):
+		visibleName = visibleName.replace(str(i), "")
+
+
+	effectExists = file2Check.file_exists("res://effects/"+visibleName+"attack.tscn")
 
 
 func _physics_process(delta: float):
@@ -84,13 +90,13 @@ func doDamage():
 
 	var attack
 	if (effectExists):
-		var attackFile = load("res://effects/"+name+"attack.tscn")
+		var attackFile = load("res://effects/"+visibleName+"attack.tscn")
 		attack = attackFile.instance()
 	else:
 		var attackFile = load("res://effects/Genericattack.tscn")
 		attack = attackFile.instance()
 	player.add_child(attack)
-	messageBox.showMessage("a " +name+" attacked you")
+	messageBox.showMessage("a " +visibleName+" attacked you")
 	
 	attackAnimation()
 
@@ -108,7 +114,9 @@ func takeDamage(dmg):
 		return
 	var attack
 	if (effectExists):
-		var attackFile = load("res://effects/"+name+"attack.tscn")
+		print(visibleName, "test")
+		var attackFile = load("res://effects/"+visibleName+"attack.tscn")
+
 		attack = attackFile.instance()
 	else:
 		var attackFile = load("res://effects/Genericattack.tscn")
