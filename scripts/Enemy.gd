@@ -7,6 +7,8 @@ export var drop = ""
 export var actDelay = 333
 export var damage = 3
 export var attackDistance = 50
+export var followDistance = 300
+
 
 var velocity = Vector2.ZERO
 
@@ -33,7 +35,7 @@ func _ready():
 	velocity.y = speed
 	
 	ai = preload("res://scripts/Ai.gd").new()
-	ai.init(self, get_tree().get_root().get_node("Game/Player"))
+	ai.init(self, get_tree().get_root().get_node("Game/Player"), followDistance)
 	sprite = get_node("Sprite")
 
 	var file2Check = File.new()

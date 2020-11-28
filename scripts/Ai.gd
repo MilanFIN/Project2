@@ -14,9 +14,10 @@ func _ready() -> void:
 	pass # Replace with function body.
 
 
-func init(e, p):
+func init(e, p, folDist):
 	entity = e
 	player = p
+	followDistance = folDist
 
 func getDirection():
 
