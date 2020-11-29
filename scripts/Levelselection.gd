@@ -20,8 +20,10 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta: float) -> void:
-#	pass
+func _process(delta: float) -> void:
+	if (Input.is_action_just_released("escape")):
+		get_tree().change_scene("res://menu/Mainmenu.tscn")
+
 
 func _on_button_press(button):
 	Global.level = button.text

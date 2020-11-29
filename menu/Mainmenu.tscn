@@ -44,19 +44,19 @@ __meta__ = {
 }
 
 [node name="Instructions" type="Label" parent="."]
-margin_left = 376.0
-margin_top = 232.0
-margin_right = 654.0
-margin_bottom = 357.0
+margin_left = 328.0
+margin_top = 240.0
+margin_right = 705.0
+margin_bottom = 567.0
 custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Controls:
 Move - WASD/Arrow keys
 Fire - Mouse 1
 Interact - Mouse2
+Change weapon - Mwheel/numbers
 
-Staying still in the cold
-will make you lose health.
+Staying still will make you lose health.
 Moving will slow down 
 the health bleed and standing
 next to fires will give health."

@@ -10,7 +10,7 @@ extends Control
 func _ready() -> void:
 	pass # Replace with function body.
 
-
+	VisualServer.set_default_clear_color(Color(0.2,0.2,0.2,1.0))
 
 
 

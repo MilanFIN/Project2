@@ -72,6 +72,8 @@ func _physics_process(delta: float) -> void:
 	if (not player.checkAlive()):
 		start()
 
+	if (Input.is_action_just_released("escape")):
+		get_tree().change_scene("res://menu/Mainmenu.tscn")
 
 func _input(event):
 
