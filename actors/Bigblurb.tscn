@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://graphics/entities/blurb.png" type="Texture" id=1]
-[ext_resource path="res://scripts/Enemy.gd" type="Script" id=2]
+[ext_resource path="res://scripts/Bossenemy.gd" type="Script" id=2]
 
 [sub_resource type="AtlasTexture" id=1]
 flags = 4
@@ -27,10 +27,10 @@ radius = 16.0
 [node name="Blurb" type="KinematicBody2D"]
 collision_layer = 4
 script = ExtResource( 2 )
-speed = 50
-hp = 6
-actDelay = 500
-damage = 6
+speed = 100
+hp = 40
+attackDistance = 100
+followDistance = 500
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 5, 5 )
@@ -42,3 +42,27 @@ playing = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2( 5, 5 )
 shape = SubResource( 4 )
+
+[node name="Control" type="Control" parent="."]
+margin_left = -48.0
+margin_top = -88.0
+margin_right = 52.0
+margin_bottom = -68.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="Control"]
+margin_right = 100.0
+margin_bottom = 20.0
+grow_horizontal = 0
+
+[node name="Red" type="ColorRect" parent="Control/Panel"]
+margin_right = 100.0
+margin_bottom = 20.0
+color = Color( 1, 0, 0, 1 )
+
+[node name="Green" type="ColorRect" parent="Control/Panel"]
+margin_right = 100.0
+margin_bottom = 20.0
+color = Color( 0, 1, 0, 1 )

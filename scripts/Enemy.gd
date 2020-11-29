@@ -3,6 +3,7 @@ class_name Enemy
 
 export var speed = 30
 export var hp = 3
+var maxHp = 3
 export var drop = ""
 export var actDelay = 333
 export var damage = 3
@@ -28,7 +29,7 @@ var alive = true
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	
-
+	maxHp = hp
 	type = "Enemy"
 	
 	velocity.x = -speed
@@ -81,6 +82,8 @@ func _physics_process(delta: float):
 	if (message != ""):
 		messageBox.showMessage(message)
 	message = ""
+	
+	showHp()
 
 
 func attackAnimation():
@@ -172,6 +175,9 @@ func act():
 func rotateMuzzle():
 	pass
 
+
+func showHp():
+	pass
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta: float):
 #	pass
