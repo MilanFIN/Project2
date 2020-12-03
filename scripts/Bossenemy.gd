@@ -9,3 +9,7 @@ func showHp():
 	var maxWidth = red.rect_size.x
 	green.rect_size.x = maxWidth * fraction
 
+
+func die():
+	get_tree().change_scene("res://menu/Endscreen.tscn")
+	queue_free()

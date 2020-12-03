@@ -44,6 +44,8 @@ func setDirection(dir):
 	direction = dir
 
 func explode():
+	
+	get_node("AudioStreamPlayer").play()
 	var area = get_node("ExplosionRange")
 	var overlappingBodies = area.get_overlapping_bodies()
 	for i in overlappingBodies:

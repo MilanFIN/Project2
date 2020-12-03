@@ -13,6 +13,9 @@ func _ready() -> void:
 
 func fire():
 	reduceAmmo()
+
+	get_node("AudioStreamPlayer").play()
+
 	get_node("Muzzle").frame = 0
 	get_node("Muzzle").play()
 	if (get_node("fireRay").is_colliding()):

@@ -119,7 +119,7 @@ func takeDamage(dmg):
 		return
 	var attack
 	if (effectExists):
-		print(visibleName, "test")
+
 		var attackFile = load("res://effects/"+visibleName+"attack.tscn")
 
 		attack = attackFile.instance()
@@ -138,7 +138,11 @@ func takeDamage(dmg):
 			dropNode.position = position
 			get_parent().add_child(dropNode)
 		alive = false
-		queue_free()
+		
+		die()
+		
+		
+
 	else:
 		message = "You attacked a " + name
 
@@ -178,6 +182,9 @@ func rotateMuzzle():
 
 func showHp():
 	pass
+
+func die():
+	queue_free()
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta: float):
 #	pass

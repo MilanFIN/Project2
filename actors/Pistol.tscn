@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://scripts/Pistol.gd" type="Script" id=1]
 [ext_resource path="res://graphics/player/pistol.png" type="Texture" id=2]
 [ext_resource path="res://graphics/player/pistol_muzzle.png" type="Texture" id=3]
+[ext_resource path="res://audio/shot.wav" type="AudioStream" id=4]
 
 [sub_resource type="AtlasTexture" id=1]
 flags = 4
@@ -56,3 +57,7 @@ collision_mask = 5
 [node name="Muzzle" type="AnimatedSprite" parent="."]
 position = Vector2( -32, -4 )
 frames = SubResource( 6 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+volume_db = -20.0

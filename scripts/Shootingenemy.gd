@@ -29,6 +29,7 @@ func clearSight():
 
 
 func attackAnimation():
+	get_node("AudioStreamPlayer").play()
 	get_node("Muzzle").frame = 0
 	get_node("Muzzle").play()
 	

@@ -20,3 +20,6 @@ custom_colors/font_color_hover = Color( 1, 0, 0, 1 )
 custom_colors/font_color_pressed = Color( 1, 0.34902, 0, 1 )
 text = "Level"
 flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}

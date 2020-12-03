@@ -1,8 +1,9 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://graphics/entities/blubsoldier.png" type="Texture" id=1]
 [ext_resource path="res://scripts/Shootingenemy.gd" type="Script" id=2]
 [ext_resource path="res://graphics/player/pistol_muzzle.png" type="Texture" id=3]
+[ext_resource path="res://audio/shot.wav" type="AudioStream" id=4]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 16.0
@@ -71,3 +72,7 @@ frames = SubResource( 8 )
 enabled = true
 cast_to = Vector2( 0, 5000 )
 collision_mask = 13
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+volume_db = -30.0
