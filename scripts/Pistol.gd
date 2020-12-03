@@ -20,7 +20,7 @@ func fire():
 	get_node("Muzzle").play()
 	if (get_node("fireRay").is_colliding()):
 		var target = get_node("fireRay").get_collider()
-		if not(target is  TileMap):
+		if (not(target is  TileMap) and not(target is StaticBody2D)):
 			if (target != null):
 				if (target.type == "Enemy"):
 					target.takeDamage(damage)

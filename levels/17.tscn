@@ -38,7 +38,7 @@ position = Vector2( 48, -8 )
 
 [node name="Ladder" parent="." instance=ExtResource( 4 )]
 position = Vector2( -1600, 2904 )
-targetMap = "17"
+targetMap = "18"
 
 [node name="Bullets" parent="." instance=ExtResource( 8 )]
 position = Vector2( 40, 88 )

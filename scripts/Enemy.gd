@@ -130,7 +130,7 @@ func takeDamage(dmg):
 
 	if (hp <= 0):
 		
-		message = "The " +name+" died"
+		message = "The " +visibleName+" died"
 		
 		if (drop != ""):
 			var dropFile = load("res://actors/"+drop+".tscn")
@@ -164,11 +164,11 @@ func act():
 			get_parent().add_child(dropNode)
 		queue_free()
 	else:
-		message = "You attacked a " + name
+		message = "You attacked a " + visibleName
 
 	var attack
 	if (effectExists):
-		var attackFile = load("res://effects/"+name+"attack.tscn")
+		var attackFile = load("res://effects/"+visibleName+"attack.tscn")
 		attack = attackFile.instance()
 	else:
 		var attackFile = load("res://effects/Genericattack.tscn")

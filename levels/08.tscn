@@ -80,7 +80,7 @@ position = Vector2( 808, 304 )
 
 [node name="Ladder" parent="." instance=ExtResource( 7 )]
 position = Vector2( 976, 384 )
-targetMap = "08"
+targetMap = "09"
 
 [node name="Wolf" parent="." instance=ExtResource( 10 )]
 position = Vector2( 680, 40 )

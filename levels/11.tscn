@@ -96,4 +96,4 @@ position = Vector2( 944, -1120 )
 
 [node name="Ladder" parent="." instance=ExtResource( 11 )]
 position = Vector2( 1128, -1280 )
-targetMap = "11"
+targetMap = "12"
