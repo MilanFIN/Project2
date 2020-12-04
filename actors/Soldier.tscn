@@ -71,7 +71,7 @@ shape = SubResource( 1 )
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 6 )
-frame = 2
+frame = 3
 playing = true
 
 [node name="Muzzle" type="AnimatedSprite" parent="."]
@@ -85,4 +85,4 @@ collision_mask = 13
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
-volume_db = -30.0
+volume_db = -20.0

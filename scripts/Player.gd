@@ -91,7 +91,13 @@ func _physics_process(delta):
 	else:
 		hud.get_node("AmmoCount").text = str(weapons[currentWeapon].ammo)
 	hud.get_node("CurrentWeapon").text = str(weapons[currentWeapon].name)
-#replace with configurable value
+
+	for i in range(1,len(weapons)):
+		hud.get_node("AmmoList/Ammo" + str(i)).text = str(weapons[i].ammo)
+		
+
+
+
 
 
 func takeDamage(dmg):
@@ -141,7 +147,7 @@ func restart():
 	hp = 100.0
 	weapons[1].ammo = 0
 	weapons[2].ammo = 0
-	messageBox.showMessage("Game has restarted.")
+	messageBox.showMessage("Restarted level.")
 
 
 func mapChange():
