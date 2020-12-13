@@ -51,6 +51,7 @@ config/icon="res://icon.png"
 [autoload]
 
 Global="*res://scripts/Global.gd"
+Backgroundmusic="*res://actors/Backgroundmusic.tscn"
 
 [display]
 
@@ -172,6 +173,9 @@ escape={
 
 [rendering]
 
-quality/driver/driver_name="GLES2"
 quality/2d/use_pixel_snap=true
+quality/filters/anisotropic_filter_level=1
 environment/default_environment="res://default_env.tres"
+environment/thread_model=1
+environment/shadows/filter_mode=1
+environment/filters/anisotropic_filter_level=4
