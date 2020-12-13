@@ -28,3 +28,8 @@ func _on_Start_pressed() -> void:
 func _on_Quit_pressed() -> void:
 	get_tree().quit()
 	pass # Replace with function body.
+
+
+func _on_Credits_pressed() -> void:
+	get_tree().change_scene("res://menu/Credits.tscn")
+	pass # Replace with function body.

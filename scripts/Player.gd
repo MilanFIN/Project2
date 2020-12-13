@@ -147,6 +147,7 @@ func restart():
 	hp = 100.0
 	weapons[1].ammo = 0
 	weapons[2].ammo = 0
+	weapons[3].ammo = 0
 	messageBox.showMessage("Restarted level.")
 
 
