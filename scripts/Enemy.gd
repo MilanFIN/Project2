@@ -144,7 +144,7 @@ func takeDamage(dmg):
 		
 
 	else:
-		message = "You attacked a " + name
+		message = "You attacked a " + visibleName
 
 
 
