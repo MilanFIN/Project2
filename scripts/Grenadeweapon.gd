@@ -16,9 +16,6 @@ func _ready() -> void:
 func fire():
 	reduceAmmo()
 
-	
-
-
 	var grndfile = load("res://actors/Grenadeprojectile.tscn")
 	var grenadeProj = grndfile.instance()
 

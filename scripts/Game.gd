@@ -15,7 +15,7 @@ func start():
 	get_node("Player").restart()
 
 func changeMap(mapname):
-	
+
 	var levelContainer = get_node("LevelContainer")
 	var player = get_node("Player")
 	for n in levelContainer.get_children():
